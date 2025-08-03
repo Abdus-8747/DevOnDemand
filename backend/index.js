@@ -28,7 +28,7 @@ app.use("/api/user", userRoutes)
 app.use("/api/admin", adminRoutes)
 
 // Health check endpoint
-app.get("/api/health", (req, res) => {
+app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
     message: "Student Project Service API is running!",
