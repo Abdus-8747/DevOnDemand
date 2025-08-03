@@ -5,26 +5,27 @@ import { Eye, EyeOff, Lock, Mail } from 'lucide-react';
 
 const AdminLogin: React.FC = () => {
   const navigate = useNavigate();
-  
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
 
   const handleLogin = () => {
-    if (email === 'codebuilders100@gmail.com' && password === 'focusOnBasics') {
+    if (email === import.meta.env.VITE_ADMIN_EMAIL && password === import.meta.env.VITE_ADMIN_PASSWORD) {
       localStorage.setItem('isAdmin', 'true');
       navigate('/admin');
       setError('');
     } else {
       setError('Invalid credentials. Try again.');
     }
+
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-black dark:to-green-950 px-4">
       <div className="w-full max-w-md bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl p-8 space-y-6 border dark:border-zinc-800">
-        
+
         {/* Title */}
         <h2 className="text-3xl font-bold text-center text-green-900 dark:text-green-200">
           Admin Login
