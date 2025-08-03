@@ -81,10 +81,6 @@ const Header: React.FC = () => {
               <Send className="h-4 w-4" />
               <span>Submit Project</span>
             </button>
-            <button onClick={() => { navigate('/admin'); setMenuOpen(false); }} className={navItemClass('/admin')}>
-              <Settings className="h-4 w-4" />
-              <span>Admin</span>
-            </button>
           </div>
         )}
       </div>
